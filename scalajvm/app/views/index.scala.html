@@ -6,6 +6,7 @@
   <title>AngularJS Binding for Scala.js :: TodoMVC Example</title>
 
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/foundation.css")">
   <script src="@routes.Assets.versioned("lib/jquery/jquery.js")"></script>
   <script src="@routes.Assets.versioned("lib/angularjs/angular.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-fastopt.js")"></script>
@@ -15,6 +16,9 @@
 <body>
 <section id="todoapp" ng-controller="todoCtrl">
   <header id="header" todo-test="test">
+    <div class="column large 12" style="background: black">
+      <div class="column large 6" style="background: blue">
+    </div>
     <h1>todos</h1>
     <form id="todo-form" ng-submit="controller.add()">
       <input id="new-todo" placeholder="What needs to be done?" ng-model="newTitle" autofocus />
@@ -24,7 +28,7 @@
     <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="controller.markAll(allChecked)">
     <label for="toggle-all">Mark all as complete</label>
     <ul id="todo-list">
-      <li ng-repeat="todo in todos | statusFilter track by $index" 
+      <li ng-repeat="todo in todos | statusFilter track by $index"
         ng-class="{completed: todo.completed}">
         <todo-item item="todo" on-change="controller.save(todo)" on-remove="controller.remove(todo)" />
       </li>
@@ -45,14 +49,14 @@
         <a ng-class="{selected: location.path() == '/completed'}" href="#/completed">Completed</a>
       </li>
     </ul>
-    <button id="clear-completed" ng-click="controller.clearCompleted()" 
+    <button id="clear-completed" ng-click="controller.clearCompleted()"
       ng-show="remainingCount < todos.length">
       Clear completed ({{todos.length - remainingCount}})</button>
   </footer>
 </section>
 <footer id="info">
   <p>Double-click to edit a todo</p>
-  <p>Created with 
+  <p>Created with
     <a href="https://github.com/greencatsoft/scalajs-angular">scalajs-angular</a>
   </p>
   <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>

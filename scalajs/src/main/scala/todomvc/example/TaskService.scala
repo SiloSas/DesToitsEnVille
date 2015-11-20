@@ -16,6 +16,7 @@ import prickle.{ Pickle, Unpickle }
 
 @injectable("taskService")
 class TaskService(http: HttpService) extends Service {
+
   require(http != null, "Missing argument 'http'.")
 
   def findAll(): Future[Seq[Task]] = flatten {
