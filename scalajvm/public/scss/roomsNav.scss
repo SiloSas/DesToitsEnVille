@@ -1,0 +1,20 @@
+@import "../componentsSettings/fundationSettings";
+@import "animate.min";
+
+rooms-nav {
+
+} * {
+    md-fab-trigger {
+      margin-left: -100px;
+    }
+    md-fab-actions {
+      margin-left: 20px;
+    }
+    .roomsImagesSlider.ng-hide-remove {
+      display: block!important;
+      -moz-transition: opacity 3s ease-in-out;
+      -moz-animation: fadeIn 2s ease-in-out;
+      top: 0;
+      position: absolute;
+    }
+  }

@@ -13,11 +13,11 @@
 .float-none{float:none!important;}
 .hiddenBlock{position: absolute; top: -99999px; opacity: 0;}
 /*Colors*/
-.primCol {background: #007095; color : #ffffff!important}
+.primCol {background-color:  $primary-color!important; color : #ffffff!important}
 .primCol > a {color : #ffffff}
 /*.primCol:hover {background: #007095}*/
 .white {background: #ffffff}
-.button.active{background: primary-color; color: #ffffff!important;}
+.button.active{background: $primary-color; color: #ffffff!important;}
 .BlackTrans{background: $blackTransparent}
 .transparent{background: $transparent}
 /*z-index*/
