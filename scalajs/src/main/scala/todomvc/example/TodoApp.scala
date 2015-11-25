@@ -1,15 +1,18 @@
 package todomvc.example
 
+import com.greencatsoft.angularjs.core.{Route, RouteProvider}
+import com.greencatsoft.angularjs.{Angular, Config, inject}
+
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
 
-import com.greencatsoft.angularjs.{ Angular, injectable }
 
 @JSExport
 object TodoApp extends JSApp {
 
   override def main() {
-    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation"))
+
+    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute"))
 
     module
       .controller[TodoCtrl]
@@ -17,5 +20,6 @@ object TodoApp extends JSApp {
       .directive[SearchBarDirective]
       .filter[StatusFilter]
       .factory[TaskServiceFactory]
+      .config(RoutingConfig)
   }
 }
