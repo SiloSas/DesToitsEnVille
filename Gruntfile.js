@@ -29,23 +29,43 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      //options: {
+      //  livereload: true,
+      //  files: [
+      //    'scalajvm/public/{,*!/}*.html',
+      //    'scalajvm/app/views/index.scala.html',
+      //    '.tmp/stylesheets/{,*!/}*.css',
+      //    'scalajvm/public/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
+      //  ]
+      //},
       bower: {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+
       compass: {
         files: ['scalajvm/public/{,*/}*.{scss,sass}'],
-        tasks: 'compass'
+        tasks: 'compass'/*,
+        options: {
+          livereload: 9000,
+        }*/
       },
+
       gruntfile: {
         files: ['Gruntfile.js']
-      }/*,
+      },
+
+      concat: {
+        files: ['Gruntfile.js', 'bower_components/*/*.{scss,sass}'],
+        tasks: 'concat'
+      }
+      /*,
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          'scalajvm/public/templates/{,*!/}*.html',
+          'scalajvm/public/{,*!/}*.html',
           '.tmp/stylesheets/{,*!/}*.css',
           'scalajvm/public/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
@@ -175,35 +195,39 @@ module.exports = function (grunt) {
     },
 
     concat: {
-      options:
-      {
+      options: {
         banner: '<%= banner %><%= jqueryCheck %>',
         stripBanners: false
       },
-      angularMaterial:
-      {
+
+      angularMaterial: {
         src: 'bower_components/angular-material/angular-material.min.js',
         dest: 'scalajvm/public/plugins/angular-material.min.js'
       },
-      angularFoundation:
-      {
+
+      angularFoundation: {
         src: 'bower_components/angular-foundation/mm-foundation-tpls.min.js',
         dest: 'scalajvm/public/plugins/mm-foundation.min.js'
       },
-      angularAnimate:
-      {
+
+      angularAnimate: {
         src: 'bower_components/angular-animate/angular-animate.min.js',
         dest: 'scalajvm/public/plugins/angular-animate.min.js'
       },
-      angulararia:
-      {
+
+      angulararia: {
         src: 'bower_components/angular-aria/angular-aria.min.js',
         dest: 'scalajvm/public/plugins/angular-aria.min.js'
       },
-      angular:
-      {
-        src: 'bower_components/angular/angular.js',
-        dest: 'scalajvm/public/plugins/angular.js'
+
+      angular: {
+        src: 'bower_components/angular/angular.min.js',
+        dest: 'scalajvm/public/plugins/angular.min.js'
+      },
+
+      angularRoute: {
+        src: 'bower_components/angular-route/angular-route.min.js',
+        dest: 'scalajvm/public/plugins/angular-route.min.js'
       }
     },
     // Reads HTML for usemin blocks to enable smart builds that automatically
