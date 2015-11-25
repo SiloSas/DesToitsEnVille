@@ -1,20 +1,21 @@
 package todomvc.example
 
+import com.greencatsoft.angularjs.Angular
+
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
-
-import com.greencatsoft.angularjs.{ Angular, injectable }
 
 @JSExport
 object TodoApp extends JSApp {
 
   override def main() {
-    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation"))
+    val module = Angular.module("todomvc", Seq("ngAnimate", "ngAria", "ngMaterial", "mm.foundation"))
 
     module
       .controller[TodoCtrl]
       .controller[RoomPagesController]
       .directive[SearchBarDirective]
+      .directive[RoomsNavDirective]
       .filter[StatusFilter]
       .factory[TaskServiceFactory]
   }

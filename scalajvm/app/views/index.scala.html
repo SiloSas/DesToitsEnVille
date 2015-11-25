@@ -9,11 +9,12 @@
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/angular-material.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.min.css")">
 
   <script src="@routes.Assets.versioned("lib/jquery/jquery.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular.js")"></script>
-  <script src="@routes.Assets.versioned("plugins/angular-animate.js")"></script>
-  <script src="@routes.Assets.versioned("plugins/angular-aria.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-animate.min.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-aria.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-material.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/mm-foundation.min.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-fastopt.js")"></script>
@@ -21,25 +22,17 @@
   <style>[ng-cloak] { display: none; }</style>
 </head>
 <body>
-  <div ng-controller = "roomPagesController" class="height100p" style="background-image: url('{{activeRoom.imagePath}}')">
-    <div >
-      @*<img ng-src="" alt="" class = "width100p absolute">*@
-        {{activeRoom}}
-      <div ng-repeat = "room in rooms">
-        {{room.name}}
-      </div>
 
-    </div>
-  <div class = "float-right margin50 paddingRight10">
+  <div class = "right0 absolute margin50 paddingRight10 zIndex5">
     <a href="/contact" class = "padding10">Contact</a>
     <a href="/services" class = "padding10">Services</a>
     <a href="/mentionsLegales" class = "padding10">Mentions légales</a>
   </div>
 
+  <rooms-nav ng-controller = "roomPagesController" class="height100p"></rooms-nav>
+
   <data-search-bar></data-search-bar>
 
-
-  </div>
 
 
 </body>

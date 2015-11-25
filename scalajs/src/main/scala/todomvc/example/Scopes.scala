@@ -1,8 +1,8 @@
 package todomvc.example
 
+import com.greencatsoft.angularjs.core.{Location, Scope}
+
 import scala.scalajs.js
-import com.greencatsoft.angularjs.core.{ Location, Scope }
-import com.greencatsoft.angularjs.injectable
 
 trait TodoScope extends Scope {
 
@@ -37,4 +37,6 @@ trait RoomScope extends Scope {
   var rooms: js.Array[Room] = js.native
 
   var activeRoom: ActiveRoom = js.native
+
+  var roomsNavIsOpen: Boolean = js.native
 }
