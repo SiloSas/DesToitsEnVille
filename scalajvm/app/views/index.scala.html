@@ -12,11 +12,12 @@
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.min.css")">
 
   <script src="@routes.Assets.versioned("lib/jquery/jquery.js")"></script>
-  <script src="@routes.Assets.versioned("plugins/angular.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-animate.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-aria.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-material.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/mm-foundation.min.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-route.min.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-fastopt.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-launcher.js")"></script>
   <style>[ng-cloak] { display: none; }</style>
@@ -33,6 +34,11 @@
 
   <data-search-bar></data-search-bar>
 
+
+
+
+
+  <div ng-view></div>
 
 
 </body>
