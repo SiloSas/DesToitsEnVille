@@ -1,4 +1,3 @@
-// Generated on 2015-04-29 using generator-angular 0.10.0
 'use strict';
 
 // # Globbing
@@ -29,15 +28,6 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      //options: {
-      //  livereload: true,
-      //  files: [
-      //    'scalajvm/public/{,*!/}*.html',
-      //    'scalajvm/app/views/index.scala.html',
-      //    '.tmp/stylesheets/{,*!/}*.css',
-      //    'scalajvm/public/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
-      //  ]
-      //},
       bower: {
         files: ['bower.json'],
         tasks: ['wiredep']
@@ -59,17 +49,6 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js', 'bower_components/*/*.{scss,sass}'],
         tasks: 'concat'
       }
-      /*,
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          'scalajvm/public/{,*!/}*.html',
-          '.tmp/stylesheets/{,*!/}*.css',
-          'scalajvm/public/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
-      }*/
     },
 
     // The actual grunt server settings
@@ -228,6 +207,11 @@ module.exports = function (grunt) {
       angularRoute: {
         src: 'bower_components/angular-route/angular-route.min.js',
         dest: 'scalajvm/public/plugins/angular-route.min.js'
+      },
+
+      angularMap: {
+        src: 'bower_components/ngmap/build/ng-map.min.js',
+        dest: 'scalajvm/public/plugins/ng-map.min.js'
       }
     },
     // Reads HTML for usemin blocks to enable smart builds that automatically

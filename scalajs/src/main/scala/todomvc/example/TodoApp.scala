@@ -12,7 +12,7 @@ object TodoApp extends JSApp {
 
   override def main() {
 
-    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute"))
+    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute"/*, "ngMap"*/))
 
     module
       .controller[TodoCtrl]
