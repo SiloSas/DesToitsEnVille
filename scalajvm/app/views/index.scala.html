@@ -3,63 +3,44 @@
 <html lang="en" ng-app="todomvc" data-framework="angularjs">
 <head>
   <meta charset="utf-8">
-  <title>AngularJS Binding for Scala.js :: TodoMVC Example</title>
+  <title>Des toits en ville</title>
 
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tools.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/angular-material.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/foundation.css")">
+
   <script src="@routes.Assets.versioned("lib/jquery/jquery.js")"></script>
-  <script src="@routes.Assets.versioned("lib/angularjs/angular.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-animate.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-aria.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-material.min.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/mm-foundation.min.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-fastopt.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-launcher.js")"></script>
   <style>[ng-cloak] { display: none; }</style>
 </head>
 <body>
-<section id="todoapp" ng-controller="todoCtrl">
-  <header id="header" todo-test="test">
-    <div class="column large 12" style="background: black">
-      <div class="column large 6" style="background: blue">
+  <div ng-controller = "roomPagesController" class="height100p" style="background-image: url('{{activeRoom.imagePath}}')">
+    <div >
+      @*<img ng-src="" alt="" class = "width100p absolute">*@
+        {{activeRoom}}
+      <div ng-repeat = "room in rooms">
+        {{room.name}}
+      </div>
+
     </div>
-    <h1>todos</h1>
-    <form id="todo-form" ng-submit="controller.add()">
-      <input id="new-todo" placeholder="What needs to be done?" ng-model="newTitle" autofocus />
-    </form>
-  </header>
-  <section id="main" ng-show="todos.length" ng-cloak>
-    <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="controller.markAll(allChecked)">
-    <label for="toggle-all">Mark all as complete</label>
-    <ul id="todo-list">
-      <li ng-repeat="todo in todos | statusFilter track by $index"
-        ng-class="{completed: todo.completed}">
-        <todo-item item="todo" on-change="controller.save(todo)" on-remove="controller.remove(todo)" />
-      </li>
-    </ul>
-  </section>
-  <footer id="footer" ng-show="todos.length" ng-cloak>
-    <span id="todo-count"><strong>{{remainingCount}}</strong>
-      <ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
-    </span>
-    <ul id="filters">
-      <li>
-        <a ng-class="{selected: location.path() == '/'} " href="#/">All</a>
-      </li>
-      <li>
-        <a ng-class="{selected: location.path() == '/active'}" href="#/active">Active</a>
-      </li>
-      <li>
-        <a ng-class="{selected: location.path() == '/completed'}" href="#/completed">Completed</a>
-      </li>
-    </ul>
-    <button id="clear-completed" ng-click="controller.clearCompleted()"
-      ng-show="remainingCount < todos.length">
-      Clear completed ({{todos.length - remainingCount}})</button>
-  </footer>
-</section>
-<footer id="info">
-  <p>Double-click to edit a todo</p>
-  <p>Created with
-    <a href="https://github.com/greencatsoft/scalajs-angular">scalajs-angular</a>
-  </p>
-  <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-</footer>
+  <div class = "float-right margin50 paddingRight10">
+    <a href="/contact" class = "padding10">Contact</a>
+    <a href="/services" class = "padding10">Services</a>
+    <a href="/mentionsLegales" class = "padding10">Mentions légales</a>
+  </div>
+
+  <data-search-bar></data-search-bar>
+
+
+  </div>
+
+
 </body>
 </html>

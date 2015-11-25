@@ -31,3 +31,10 @@ trait TodoItemScope extends Scope {
 
   def fireOnChange(): Unit = js.native
 }
+
+trait RoomScope extends Scope {
+
+  var rooms: js.Array[Room] = js.native
+
+  var activeRoom: ActiveRoom = js.native
+}

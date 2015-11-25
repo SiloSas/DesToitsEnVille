@@ -13,3 +13,9 @@ logs
 .idea
 .idea_modules
 atlassian-ide-plugin.xml
+
+#JS
+node_modules
+bower_components
+.sass-cache
+.tmp

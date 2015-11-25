@@ -9,13 +9,12 @@ import com.greencatsoft.angularjs.{ Angular, injectable }
 object TodoApp extends JSApp {
 
   override def main() {
-    val module = Angular.module("todomvc")
+    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation"))
 
     module
       .controller[TodoCtrl]
-      .directive[TodoItemDirective]
-      .directive[EscapeDirective]
-      .directive[FocusDirective]
+      .controller[RoomPagesController]
+      .directive[SearchBarDirective]
       .filter[StatusFilter]
       .factory[TaskServiceFactory]
   }

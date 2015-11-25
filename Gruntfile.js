@@ -35,21 +35,21 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['scalajvm/public/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: 'compass'
       },
       gruntfile: {
         files: ['Gruntfile.js']
-      },
+      }/*,
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          'scalajvm/public/templates/{,*/}*.html',
-          '.tmp/stylesheets/{,*/}*.css',
-          'scalajvm/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          'scalajvm/public/templates/{,*!/}*.html',
+          '.tmp/stylesheets/{,*!/}*.css',
+          'scalajvm/public/images/{,*!/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      }
+      }*/
     },
 
     // The actual grunt server settings
@@ -138,7 +138,7 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: ['<%= /scalajvm/public/stylesheets', 'bower_components/foundation/scss'],
+        sassDir: 'scalajvm/public/scss',
         cssDir: 'scalajvm/public/stylesheets',
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: 'scalajvm/public/images',
@@ -174,6 +174,38 @@ module.exports = function (grunt) {
       }
     },
 
+    concat: {
+      options:
+      {
+        banner: '<%= banner %><%= jqueryCheck %>',
+        stripBanners: false
+      },
+      angularMaterial:
+      {
+        src: 'bower_components/angular-material/angular-material.min.js',
+        dest: 'scalajvm/public/plugins/angular-material.min.js'
+      },
+      angularFoundation:
+      {
+        src: 'bower_components/angular-foundation/mm-foundation-tpls.min.js',
+        dest: 'scalajvm/public/plugins/mm-foundation.min.js'
+      },
+      angularAnimate:
+      {
+        src: 'bower_components/angular-animate/angular-animate.min.js',
+        dest: 'scalajvm/public/plugins/angular-animate.min.js'
+      },
+      angulararia:
+      {
+        src: 'bower_components/angular-aria/angular-aria.min.js',
+        dest: 'scalajvm/public/plugins/angular-aria.min.js'
+      },
+      angular:
+      {
+        src: 'bower_components/angular/angular.js',
+        dest: 'scalajvm/public/plugins/angular.js'
+      }
+    },
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
