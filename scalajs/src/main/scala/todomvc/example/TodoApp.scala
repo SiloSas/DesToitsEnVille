@@ -1,7 +1,6 @@
 package todomvc.example
 
-import com.greencatsoft.angularjs.core.{Route, RouteProvider}
-import com.greencatsoft.angularjs.{Angular, Config, inject}
+import com.greencatsoft.angularjs.Angular
 
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
@@ -12,7 +11,7 @@ object TodoApp extends JSApp {
 
   override def main() {
 
-    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute"/*, "ngMap"*/))
+    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute", "ngMap"))
 
     module
       .controller[TodoCtrl]

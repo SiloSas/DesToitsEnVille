@@ -210,7 +210,7 @@ module.exports = function (grunt) {
       },
 
       angularMap: {
-        src: 'bower_components/ngmap/build/ng-map.min.js',
+        src: 'bower_components/ngmap/build/scripts/ng-map.min.js',
         dest: 'scalajvm/public/plugins/ng-map.min.js'
       }
     },
