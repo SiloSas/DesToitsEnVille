@@ -10,7 +10,9 @@ import scala.scalajs.js.annotation.JSExport
 object TodoApp extends JSApp {
 
   override def main() {
-    val module = Angular.module("todomvc", Seq("ngAnimate", "ngAria", "ngMaterial", "mm.foundation", "ngRoute"))
+
+    val module = Angular.module("todomvc", Seq("ngAnimate", "ngAria", "ngMaterial", "mm.foundation", "ngRoute", "ngMap"))
+
     module
       .controller[TodoCtrl]
       .controller[RoomPagesController]
