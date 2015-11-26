@@ -1,0 +1,11 @@
+<div data-ng-repeat="room in rooms" >
+  <img ng-src="{{image}}" alt=""
+       class = "width100p roomsImagesSlider animated"
+       data-ng-repeat="image in room.images"
+       data-ng-show="image === activeRoom.imagePath"
+    >
+</div>
+
+<div class="absolute zIndex1 homeRoomTitle float-left">
+  <h1 class="float-left marginTop0"><a href="#/rooms/{{activeRoom.name}}">{{activeRoom.name}}</a></h1>
+</div>

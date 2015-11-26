@@ -26695,6 +26695,13 @@ Copyright (c) 2014 Daniel Eden
   position: absolute;
 }
 
+/* line 21, ../scss/roomsNav.scss */
+.homeRoomTitle {
+  right: auto;
+  left: 80px;
+  top: 10px;
+}
+
 /* line 6, ../scss/main.scss */
 body {
   background-color: white;
