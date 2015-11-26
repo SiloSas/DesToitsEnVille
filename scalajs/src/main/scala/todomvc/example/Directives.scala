@@ -1,20 +1,15 @@
 package todomvc.example
 
-import org.scalajs.dom.raw.MouseEvent
-import org.scalajs.dom
-import dom.document
-import scala.scalajs.js
-import scala.scalajs.js.Any.{ fromFunction0, fromFunction1, fromString }
-import scala.scalajs.js.UndefOr
-import scala.scalajs.js.UndefOr.{ undefOr2jsAny, undefOr2ops }
-import scala.scalajs.js.annotation.JSExport
-
-import org.scalajs.dom.{ Element, KeyboardEvent }
+import com.greencatsoft.angularjs.core.Timeout
+import com.greencatsoft.angularjs._
+import org.scalajs.dom.Element
 import org.scalajs.dom.html.Html
 
-import com.greencatsoft.angularjs.{ AttributeDirective, Attributes, ElementDirective, IsolatedScope, TemplatedDirective }
-import com.greencatsoft.angularjs.{ inject, injectable }
-import com.greencatsoft.angularjs.core.{ Scope, Timeout }
+import scala.scalajs.js
+import scala.scalajs.js.Any.{fromFunction0, fromFunction1, fromString}
+import scala.scalajs.js.UndefOr
+import scala.scalajs.js.UndefOr.{undefOr2jsAny, undefOr2ops}
+import scala.scalajs.js.annotation.JSExport
 
 //@JSExport
 //@injectable("todoItem")
@@ -76,4 +71,9 @@ class FocusDirective(timeout: Timeout) extends AttributeDirective {
 @injectable("searchBar")
 class SearchBarDirective extends ElementDirective with TemplatedDirective {
   override val templateUrl = "assets/templates/searchBar.html"
+}
+@JSExport
+@injectable("roomsNav")
+class RoomsNavDirective extends ElementDirective with TemplatedDirective {
+  override val templateUrl = "assets/templates/roomsNav.html"
 }

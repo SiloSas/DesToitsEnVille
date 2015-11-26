@@ -1,0 +1,24 @@
+<div data-ng-repeat="room in rooms">
+  <img ng-src="{{image}}" alt=""
+      class = "width100p zIndex0 roomsImagesSlider animated"
+      data-ng-repeat="image in room.images"
+      data-ng-show="image === activeRoom.imagePath"
+    >
+</div>
+
+<div class="absolute left0 zIndex1 top0 float-left margin50">
+  <md-fab-speed-dial md-open="roomsNavIsOpen" md-direction="down"
+                     class="md-fling float-left">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab primCol">
+        <md-icon md-svg-src="assets/images/menu.svg"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <a data-ng-repeat="room in rooms" href="/rooms/{{room.name}}">
+        <h3 ng-class="{'animated fadeOut': !roomsNavIsOpen, 'animated fadeIn': roomsNavIsOpen}">{{room.name}}</h3>
+      </a>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+  <h1 class="float-left marginTop0"><a href="/rooms/{{activeRoom.name}}">{{activeRoom.name}}</a></h1>
+</div>

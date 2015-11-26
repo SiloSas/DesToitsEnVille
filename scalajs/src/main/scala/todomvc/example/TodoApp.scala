@@ -11,12 +11,13 @@ object TodoApp extends JSApp {
 
   override def main() {
 
-    val module = Angular.module("todomvc", Seq("ngMaterial", "mm.foundation", "ngRoute", "ngMap"))
+    val module = Angular.module("todomvc", Seq("ngAnimate", "ngAria", "ngMaterial", "mm.foundation", "ngRoute", "ngMap"))
 
     module
       .controller[TodoCtrl]
       .controller[RoomPagesController]
       .directive[SearchBarDirective]
+      .directive[RoomsNavDirective]
       .filter[StatusFilter]
       .factory[TaskServiceFactory]
       .config(RoutingConfig)
