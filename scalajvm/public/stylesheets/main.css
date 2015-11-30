@@ -6499,8 +6499,8 @@ label small {
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
-  border-style: solid;
-  border-width: 0px;
+  border-style: none;
+  border-width: 1px;
   overflow: hidden;
   font-size: 0.875rem;
   height: 2.3125rem;
@@ -6607,7 +6607,7 @@ textarea {
   border-style: solid;
   border-width: 1px;
   border-color: #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
@@ -19091,8 +19091,8 @@ label small {
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
-  border-style: solid;
-  border-width: 0px;
+  border-style: none;
+  border-width: 1px;
   overflow: hidden;
   font-size: 0.875rem;
   height: 2.3125rem;
@@ -19199,7 +19199,7 @@ textarea {
   border-style: solid;
   border-width: 1px;
   border-color: #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
@@ -26823,32 +26823,33 @@ data-search-bar {
   margin-top: -20px;
 }
 /* line 31, ../scss/main.scss */
-* input {
+* .md-datepicker-input {
   color: white !important;
   font-weight: bold;
   font-size: 17px !important;
+  width: 100%;
 }
-/* line 37, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 * .md-datepicker-input-container {
-  width: 80%;
+  width: 80% !important;
 }
-/* line 41, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 * .md-datepicker-expand-triangle {
   border-top-color: white !important;
 }
-/* line 44, ../scss/main.scss */
+/* line 45, ../scss/main.scss */
 * .pagesContainer {
   height: 100%;
   overflow: auto;
 }
 
-/* line 49, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 .searchContainer {
   margin-top: 60px;
   padding-bottom: 80px;
 }
 
-/* line 53, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 button[disabled|="disabled"] {
   cursor: not-allowed;
 }

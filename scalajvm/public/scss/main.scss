@@ -28,14 +28,15 @@ data-search-bar {
     margin-top: -20px;
   }
 
-  input {
+  .md-datepicker-input {
     color: white !important;
     font-weight: bold;
     font-size: 17px !important;
+    width: 100%;
   }
 
   .md-datepicker-input-container {
-    width: 80%;
+    width: 80%!important;
   }
 
   .md-datepicker-expand-triangle {

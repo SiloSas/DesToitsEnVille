@@ -53,16 +53,15 @@ object RoomsController extends Controller {
     Ok(write(rooms))
   }
 
-
   def findAvailable(start: String, end: String) = Action {
     Ok(write(Seq(room1, room3)))
   }
 
   def findById(id: String) = Action {
     val room = rooms.find(_.id == id)
-    println(rooms)
     room match {
       case Some(roomFound) =>
+        println(write(roomFound))
         Ok(write(roomFound))
       case _ =>
         NotFound

@@ -46,4 +46,8 @@ trait RoomScope extends Scope {
   var roomsNavIsOpen: Boolean = js.native
 
   var availableRooms: js.Array[Room] = js.native
+
+  var start: js.Date = js.native
+
+  var end: js.Date = js.native
 }

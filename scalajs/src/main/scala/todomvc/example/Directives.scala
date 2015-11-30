@@ -4,7 +4,10 @@ import com.greencatsoft.angularjs._
 import com.greencatsoft.angularjs.core.{RouteParams, Timeout}
 import com.greencatsoft.angularjs.extensions.{ModalOptions, ModalService}
 import org.scalajs.dom.Element
+import prickle.Pickle
+import upickle.default._
 import upickle.json
+import upickle.default._
 
 import scala.scalajs.js
 import scala.scalajs.js.Dictionary
@@ -97,18 +100,19 @@ class RoomMinDirective(timeout: Timeout, modal: ModalService, routeParams: Route
       resize()
     }
   }
+
   @JSExport
   def openModal(room: Room): Unit = {
+    val room2 = Room2(room.id, room.name, room.presentation, room.images.toArray, room.isAnApartment, room.price)
     val newModal: ModalOptions = new js.Object().asInstanceOf[ModalOptions]
     newModal.templateUrl = "assets/templates/modal.html"
     newModal.controller = "modalController"
     /*scope.room = room
     newModal.scope = scope*/
-    /*
-    newModal.resolve =  new js.Object().asInstanceOf[js.Dictionary[js.Any]]
-    newModal.resolve("room") = 5
-    newModal.resolve map(println)
-    println(newModal.resolve("room"))*/
+    newModal.resolve = new js.Object().asInstanceOf[js.Dictionary[js.Any]]
+    val a = write(room2)
+    newModal.resolve("room") = write(room2)
+    println(newModal.resolve("room"))
     modal.open(newModal)
   }
 
