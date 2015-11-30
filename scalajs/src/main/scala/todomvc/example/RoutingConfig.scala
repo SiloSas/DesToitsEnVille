@@ -25,6 +25,18 @@ object RoutingConfig extends Config {
           templateUrl = "/assets/templates/main.html",
           title = "Main",
           controller = "roomPagesController"))
+      .when(
+        path = "/rooms/:id",
+        route = Route(
+          templateUrl = "/assets/templates/room.html",
+          title = "Room",
+          controller = "roomController"))
+      .when(
+        path = "/search/:start/:end",
+        route = Route(
+          templateUrl = "/assets/templates/research.html",
+          title = "Research",
+          controller = "researchController"))
   }
 }
 

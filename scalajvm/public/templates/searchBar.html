@@ -1,20 +1,21 @@
 <div>
-
   <div class = "column large-6">
     <md-datepicker
-      ng-model="myDate"
+      ng-model="startDate"
       md-placeholder = "Date d'arrivée"
-      class = "transparent textColorWhite column large-6">
+      class = "transparent textColorWhite margin0 column large-6">
     </md-datepicker>
     <md-datepicker
-      ng-model="myDate1"
+      ng-model="endDate"
       md-placeholder = "Date de départ"
-      class = "transparent textColorWhite column large-6">
+      md-min-date="startDate"
+      class = "transparent textColorWhite margin0 column large-6">
     </md-datepicker>
   </div>
-
-
-  <button class = "column large-2 float-left large-offset-1">Réserver maintenant !</button>
-
+  <md-button class = "column primCol large-2 float-left large-offset-1"
+   ng-disabled="!startDate || !endDate"
+   ng-href="#/search/{{startDate | date: 'dd-MM-yyyy'}}/{{endDate | date: 'dd-MM-yyyy'}}">
+  Réserver maintenant !
+  </md-button>
 </div>
 

@@ -27,6 +27,8 @@
 .zIndex4{z-index:4;}
 .zIndex5{z-index:5;}
 .zIndex6{z-index:6;}
+.shadow { box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26); }
+.rounded { border-radius: 3px; }
 
 /*text*/
 .center{text-align:center!important;}
@@ -179,7 +181,7 @@
 .maxHeight40{max-height:40em!important;}
 .maxHeight450{max-height:450px!important;}
 .maxHeight45{max-height:45em!important;}
-.height100p{min-height:100%!important;}
+.height100p{height:100%!important;}
 
 .minHeight50{min-height:50px!important;}
 .minHeight5{min-height:5em!important;}

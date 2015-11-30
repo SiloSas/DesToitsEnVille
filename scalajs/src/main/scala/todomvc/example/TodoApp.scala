@@ -16,10 +16,15 @@ object TodoApp extends JSApp {
     module
       .controller[TodoCtrl]
       .controller[RoomPagesController]
+      .controller[RoomController]
+      .controller[ModalController]
+      .controller[ResearchController]
       .directive[SearchBarDirective]
       .directive[RoomsNavDirective]
-      .filter[StatusFilter]
+      .directive[RoomMinDirective]
       .factory[TaskServiceFactory]
+      .factory[RoomServiceFactory]
+      .filter[StatusFilter]
       .config(RoutingConfig)
   }
 }

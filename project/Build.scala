@@ -50,6 +50,7 @@ object ApplicationBuild extends Build with UniversalKeys {
       libraryDependencies ++= Seq(
         jdbc,
         "com.github.benhutchison" %% "prickle" % Versions.prickle,
+	"com.lihaoyi" %% "upickle" % "0.3.6",
         "org.squeryl" %% "squeryl" % "0.9.5-7",
         "org.webjars" % "jquery" % "2.1.3",
         "org.webjars" % "angularjs" % "1.3.13"
@@ -74,6 +75,7 @@ object ApplicationBuild extends Build with UniversalKeys {
   "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
       libraryDependencies ++= Seq(
         "com.greencatsoft" %%% "scalajs-angular" % Versions.library,
+	"com.lihaoyi" %%% "upickle" % "0.3.6",
         "com.github.benhutchison" %%% "prickle" % Versions.prickle
       )
     )

@@ -4,22 +4,94 @@
 rooms-nav {
 
 } * {
-    md-fab-trigger {
-      margin-left: -100px;
-    }
     md-fab-actions {
       margin-left: 20px;
+      margin-top: 80px;
     }
     .roomsImagesSlider.ng-hide-remove {
       display: block!important;
       -moz-transition: opacity 3s ease-in-out;
+      -webkit-transition: opacity 3s ease-in-out;
+      -o-transition: opacity 3s ease-in-out;
+      -ms-transition: opacity 3s ease-in-out;
       -moz-animation: fadeIn 2s ease-in-out;
+      -webkit-animation: fadeIn 2s ease-in-out;
+      -o-animation: fadeIn 2s ease-in-out;
       top: 0;
       position: absolute;
     }
   }
   .homeRoomTitle {
     right: auto;
-    left: 80px;
-    top: 10px;
+    left: 65px;
+    top: 20px;
   }
+  .roomDetails > li {
+    display: block;
+  }
+
+
+.svg-wrapper {
+  position: relative;
+  //top: 50%;
+  /*transform: translateY(-50%);*/
+  margin: 0 auto;
+  width: 280px;
+  height: 50px;
+}
+.shape {
+  stroke-dasharray: 90 650;
+  stroke-dashoffset: -425;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: $primary-color;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -42px;
+  position: relative;
+  text-align: center;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+.roomDetails {
+  margin-left: 280px;
+}
+.roomContainer {
+  height: 100%;
+  overflow: auto;
+}
+room-min.disabled {
+  filter: opacity(0.5);
+}
+.imageContainer {
+  max-height: 100%;
+  overflow: hidden;
+}
+.roomDescription {
+  top: 15%;
+  font-size: 40px;
+}
+@media (max-width: 600px) {
+  .roomContainer {
+    margin-bottom: 145px;
+  }
+  .homeRoomTitle {
+    right: auto;
+    left: 0;
+    top: 20px;
+    text-align: center;
+  }
+  .roomsImagesSlider.ng-hide-remove {
+    position: relative;
+  }
+}

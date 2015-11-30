@@ -4,6 +4,7 @@ import com.greencatsoft.angularjs.core.{Location, Scope}
 
 import scala.scalajs.js
 
+
 trait TodoScope extends Scope {
 
   var todos: js.Array[Task] = js.native
@@ -36,7 +37,13 @@ trait RoomScope extends Scope {
 
   var rooms: js.Array[Room] = js.native
 
+  var room: Room = js.native
+
+  var activeImage: String = js.native
+
   var activeRoom: ActiveRoom = js.native
 
   var roomsNavIsOpen: Boolean = js.native
+
+  var availableRooms: js.Array[Room] = js.native
 }
