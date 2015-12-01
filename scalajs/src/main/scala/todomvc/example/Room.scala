@@ -1,8 +1,11 @@
 package todomvc.example
 
+import jdk.nashorn.internal.scripts.JS
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSExportAll
 
 
 @JSExportAll
-case class Room(name: String, presentation: String, images: js.Array[String], isAnApartment: Boolean )
+case class Room(id: String, name: String, presentation: String, images: js.Array[String], isAnApartment: Boolean, price: Double)
+
+case class Room2(id: String, name: String, presentation: String, images: Array[String], isAnApartment: Boolean, price: Double)

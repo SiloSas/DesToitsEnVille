@@ -1,4 +1,7 @@
 GET			/							controllers.TodoController.home
+GET			/rooms							controllers.RoomsController.findAll
+GET			/room							controllers.RoomsController.findById(id: String)
+GET     /availableRooms   controllers.RoomsController.findAvailable(start: String, end: String)
 GET			/api/todos					controllers.TodoController.list
 PUT			/api/todos					controllers.TodoController.create
 POST		/api/todos/markAll			controllers.TodoController.markAll(completed: Boolean)

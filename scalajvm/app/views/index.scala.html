@@ -3,12 +3,14 @@
 <html lang="en" ng-app="todomvc" data-framework="angularjs">
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>Des toits en ville</title>
 
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tools.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome.css")">
-  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/angular-material.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/angular-material.css")">
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.min.css")">
 
   <script src="http://maps.google.com/maps/api/js"></script>
@@ -18,7 +20,7 @@
   <script src="@routes.Assets.versioned("plugins/angular-animate.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-aria.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-material.min.js")"></script>
-  <script src="@routes.Assets.versioned("plugins/mm-foundation.min.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/mm-foundation.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-route.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/ng-map.min.js")"></script>
   <script src="@routes.Assets.versioned("javascripts/todomvc-client-fastopt.js")"></script>
@@ -28,18 +30,18 @@
 <body>
 
 
-  <div class = "right0 absolute margin50 paddingRight10 zIndex5">
+  <div class = "right0 absolute column large-8 textRight paddingRight10 zIndex5">
     <a href="#/contact" class = "padding10">Contact</a>
     <a href="/services" class = "padding10">Services</a>
     <a href="/mentionsLegales" class = "padding10">Mentions légales</a>
   </div>
 
-  <rooms-nav ng-controller = "roomPagesController" class="absolute"></rooms-nav>
+  <rooms-nav ng-controller = "roomPagesController" class="absolute zIndex5"></rooms-nav>
 
   <data-search-bar class="zIndex2"></data-search-bar>
 
 
-  <div ng-view="" class="height100p zIndex1"></div>
+  <div ng-view="" class="height100p zIndex1 pagesContainer"></div>
 
 </body>
 </html>

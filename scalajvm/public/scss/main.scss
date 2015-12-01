@@ -3,12 +3,13 @@
 @import "roomsNav";
 
 
-body {
+body, html {
   background-color: white;
   background-size: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 //Search Bar
@@ -23,18 +24,34 @@ data-search-bar {
     background: transparent !important;
   }
 
-  input {
+  .md-calendar-scroll-mask {
+    margin-top: -20px;
+  }
+
+  .md-datepicker-input {
     color: white !important;
     font-weight: bold;
     font-size: 17px !important;
+    width: 100%;
   }
 
   .md-datepicker-input-container {
-    width: 80%;
+    width: 80%!important;
   }
 
   .md-datepicker-expand-triangle {
     border-top-color: white !important;
   }
+  .pagesContainer {
+    height: 100%;
+    overflow: auto;
+  }
 }
+  .searchContainer {
+    margin-top: 60px;
+    padding-bottom: 80px;
+  }
+  button[disabled|="disabled"] {
+    cursor: not-allowed;
+  }
 
