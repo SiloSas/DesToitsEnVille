@@ -15,7 +15,9 @@ logs
 atlassian-ide-plugin.xml
 
 #JS
+scalajvm/public/plugins
 node_modules
 bower_components
 .sass-cache
 .tmp
+npm-debug.log
