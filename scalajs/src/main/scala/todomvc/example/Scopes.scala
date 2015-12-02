@@ -51,3 +51,8 @@ trait RoomScope extends Scope {
 
   var end: js.Date = js.native
 }
+trait CommentsScope extends Scope {
+
+  var comments: js.Array[Comment] = js.native
+
+}

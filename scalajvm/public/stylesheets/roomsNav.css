@@ -2830,8 +2830,8 @@ Copyright (c) 2014 Daniel Eden
 
 /* line 7, ../scss/roomsNav.scss */
 * md-fab-actions {
-  margin-left: 20px;
-  margin-top: 80px;
+  margin-left: 70px;
+  margin-top: -20px;
 }
 /* line 11, ../scss/roomsNav.scss */
 * .roomsImagesSlider.ng-hide-remove {
@@ -2843,23 +2843,43 @@ Copyright (c) 2014 Daniel Eden
   -moz-animation: fadeIn 2s ease-in-out;
   -webkit-animation: fadeIn 2s ease-in-out;
   -o-animation: fadeIn 2s ease-in-out;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
   position: absolute;
 }
-
-/* line 24, ../scss/roomsNav.scss */
-.homeRoomTitle {
-  right: auto;
-  left: 65px;
-  top: 20px;
+/* line 26, ../scss/roomsNav.scss */
+* .roomsImagesSlider.ng-hide-remove-active {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+/* line 32, ../scss/roomsNav.scss */
+* .roomsImagesSlider.ng-hide-add {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* line 38, ../scss/roomsNav.scss */
+* .imagesContainer {
+  max-height: 100%;
+  overflow: hidden;
+}
+/* line 42, ../scss/roomsNav.scss */
+* .roomsImagesSlider {
+  max-height: 100%;
+  overflow: hidden;
 }
 
-/* line 29, ../scss/roomsNav.scss */
+/* line 48, ../scss/roomsNav.scss */
 .roomDetails > li {
   display: block;
 }
 
-/* line 34, ../scss/roomsNav.scss */
+/* line 53, ../scss/roomsNav.scss */
 .svg-wrapper {
   position: relative;
   /*transform: translateY(-50%);*/
@@ -2868,20 +2888,20 @@ Copyright (c) 2014 Daniel Eden
   height: 50px;
 }
 
-/* line 42, ../scss/roomsNav.scss */
+/* line 61, ../scss/roomsNav.scss */
 .shape {
   stroke-dasharray: 90 650;
   stroke-dashoffset: -425;
   stroke-width: 8px;
   fill: transparent;
-  stroke: #855BD5;
+  stroke: #855bd5;
   border-bottom: 5px solid black;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
 }
 
-/* line 51, ../scss/roomsNav.scss */
+/* line 70, ../scss/roomsNav.scss */
 .text {
-  font-family: 'Roboto Condensed';
+  font-family: 'feathericons';
   font-size: 22px;
   line-height: 32px;
   letter-spacing: 8px;
@@ -2891,48 +2911,50 @@ Copyright (c) 2014 Daniel Eden
   text-align: center;
 }
 
-/* line 61, ../scss/roomsNav.scss */
+/* line 80, ../scss/roomsNav.scss */
 .svg-wrapper:hover .shape {
   stroke-width: 2px;
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
 
-/* line 66, ../scss/roomsNav.scss */
+/* line 85, ../scss/roomsNav.scss */
 .roomDetails {
   margin-left: 280px;
 }
 
-/* line 69, ../scss/roomsNav.scss */
-.roomContainer {
-  height: 100%;
-  overflow: auto;
-}
-
-/* line 73, ../scss/roomsNav.scss */
+/* line 89, ../scss/roomsNav.scss */
 room-min.disabled {
   filter: opacity(0.5);
 }
 
-/* line 76, ../scss/roomsNav.scss */
+/* line 92, ../scss/roomsNav.scss */
 .imageContainer {
-  max-height: 100%;
-  overflow: hidden;
+  max-height: 100% !important;
+  overflow: hidden !important;
+  float: left;
 }
 
-/* line 80, ../scss/roomsNav.scss */
+/* line 97, ../scss/roomsNav.scss */
 .roomDescription {
   top: 15%;
   font-size: 40px;
 }
 
+/* line 101, ../scss/roomsNav.scss */
+.paddingSearchMin {
+  padding-bottom: 80px;
+  float: left;
+  width: 100%;
+}
+
 @media (max-width: 600px) {
-  /* line 85, ../scss/roomsNav.scss */
+  /* line 107, ../scss/roomsNav.scss */
   .roomContainer {
     margin-bottom: 145px;
   }
 
-  /* line 88, ../scss/roomsNav.scss */
+  /* line 110, ../scss/roomsNav.scss */
   .homeRoomTitle {
     right: auto;
     left: 0;
@@ -2940,8 +2962,15 @@ room-min.disabled {
     text-align: center;
   }
 
-  /* line 94, ../scss/roomsNav.scss */
-  .roomsImagesSlider.ng-hide-remove {
-    position: relative;
+  /* line 116, ../scss/roomsNav.scss */
+  .roomsImagesSlider {
+    max-height: 100%;
+  }
+
+  /* line 119, ../scss/roomsNav.scss */
+  .paddingSearchMin {
+    padding-bottom: 150px;
+    float: left;
+    width: 100%;
   }
 }

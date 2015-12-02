@@ -1,15 +1,12 @@
 
-<md-fab-speed-dial md-open="roomsNavIsOpen" md-direction="down"
-class="md-fling float-left">
+<md-fab-speed-dial md-open="roomsNavIsOpen" md-direction="right"
+class="md-fling float-left" hide-sm>
   <md-fab-trigger>
-    <md-button aria-label="menu" class="md-fab primCol absolute left0" hide-sm>
-      <md-icon md-svg-src="assets/images/menu.svg"></md-icon>
-    </md-button>
-    <md-button ng-click="roomsNavIsOpen = !roomsNavIsOpen" aria-label="menu" class="md-fab primCol absolute left0"  hide-gt-md>
+    <md-button aria-label="menu" class="md-fab primCol left0" >
       <md-icon md-svg-src="assets/images/menu.svg"></md-icon>
     </md-button>
   </md-fab-trigger>
-  <md-fab-actions>
+  <md-fab-actions class="absolute">
     <a data-ng-repeat="room in rooms" ng-click="$parent.roomsNavIsOpen = false" href="#/rooms/{{room.id}}">
       <div class="svg-wrapper" ng-class="{'animated fadeOut': !roomsNavIsOpen, 'animated fadeIn': roomsNavIsOpen}">
         <svg height="40" width="280" xmlns="http://www.w3.org/2000/svg" class="shadow rounded BlackTrans">
@@ -22,4 +19,8 @@ class="md-fling float-left">
   </md-fab-actions>
 </md-fab-speed-dial>
 
+<md-button ng-click="directive.toggleLeft()"
+           class="primCol md-fab" hide-gt-md>
+  <md-icon md-svg-src="assets/images/menu.svg"></md-icon>
+</md-button>
 

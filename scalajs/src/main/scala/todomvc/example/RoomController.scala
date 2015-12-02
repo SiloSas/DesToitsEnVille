@@ -23,8 +23,12 @@ class RoomController(scope: RoomScope, timeout: Timeout, service: RoomService, $
         scope.room = room
         scope.activeImage = scope.room.images.head
       }
-
-      changeActiveImage(scope.room.images.tail)
+      timeout(fn = () => {
+        changeActiveImage(scope.room.images.tail)
+      },
+        delay = 10000,
+        invokeApply = true
+      )
     case Failure(t) => handleError(t)
   }
 

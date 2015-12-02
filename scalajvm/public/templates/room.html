@@ -1,14 +1,14 @@
-<div class="roomContainer">
-  <div class="imageContainer"><img ng-src="{{image}}" alt=""
-     class = "width100p roomsImagesSlider animated"
-     data-ng-repeat="image in room.images"
-     data-ng-show="image === activeImage"
-  ></div>
-  <div class="roomDescription absolute column large-8 large-offset-2 BlackTrans rounded shadow text-center textColorWhite"
-       hide-sm>{{room.presentation}}</div>
-  <div class="column"
-       show-sm hide-gt-md>{{room.presentation}}</div>
-  <div class="absolute zIndex1 homeRoomTitle float-left column large-6">
-    <h1 class="float-left marginTop0 column large-12"><a href="#/rooms/{{room.id}}">{{room.name}}</a></h1>
-  </div>
+<div class="imagesContainer"><div class="imageContainer roomsImagesSlider animated" data-ng-repeat="image in room.images"
+   data-ng-show="image === activeImage">
+  <img ng-src="{{image}}" alt=""
+   class = "width100p "
+
+></div></div>
+<div class="roomDescription absolute column large-8 large-offset-2 BlackTrans rounded shadow text-center textColorWhite"
+     hide-sm>{{room.presentation}}</div>
+<div class="column smallDescription"
+     show-sm hide-gt-md>{{room.presentation}}</div>
+<div class="absolute zIndex1 homeRoomTitle float-left column large-6">
+  <h1 class="float-left marginTop0 column large-12"><a href="#/rooms/{{room.id}}">{{room.name}}</a></h1>
 </div>
+<div class = "paddingSearchMin"></div>

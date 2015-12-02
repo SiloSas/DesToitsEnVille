@@ -1,6 +1,7 @@
 @import "../componentsSettings/foundation";
 @import "../../../bower_components/foundation/scss/normalize";
 @import "roomsNav";
+@import "roomMinHome";
 
 
 body, html {
@@ -11,6 +12,7 @@ body, html {
   overflow: hidden;
   width: 100%;
 }
+
 
 //Search Bar
 data-search-bar {
@@ -36,22 +38,92 @@ data-search-bar {
   }
 
   .md-datepicker-input-container {
-    width: 80%!important;
+    width: 75%!important;
+    margin-left: 0;
   }
 
   .md-datepicker-expand-triangle {
     border-top-color: white !important;
   }
   .pagesContainer {
-    height: 100%;
-    overflow: auto;
+   overflow: hidden;
   }
 }
+  .mainContainer {
+    perspective: 1px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%;
+    perspective-origin-x: 100%;
+  }
   .searchContainer {
     margin-top: 60px;
-    padding-bottom: 80px;
   }
   button[disabled|="disabled"] {
     cursor: not-allowed;
   }
+  .bookingModal {
+    max-height: 80%;
+    overflow: auto;
+    padding: 10px;
+  }
+.parallax-background {
+  padding: 0;
+  width: 100%;
+}
+.parallax-content {
+  max-width: 100%;
+  padding-left:0 ;
+  padding-right:0 ;
+  z-index: 3;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-origin-x: 100%;
+}
+.parallax__layer--base {
+  transform: translateZ(-2px) scale(3);
+}
+.parallax__layer--back {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transform: translateZ(-15px) scale(16.1);
+}
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+.parallax__group {
+  transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+.mainTitles {
+  background-color: rgba(132, 91, 212, 0.39);
+  font-weight: 800;
+  font-family: 'feathericons';
+  padding: 80px;
+}
+.mainText {
+  font-size: 23px;
+  padding: 20px;
+  font-family: 'feathericons';
+  text-align: center;
+}
+.homeRoomTitle, .homeRoomTitle > h1 {
+  width: 100%;
+  top: 50%;
+  font-size: 23px;
+  text-align: center;
+  font-family: 'feathericons';
+  font-weight: 800;
+  color: $primary-color;
+  transform: translateZ(-1.5px) scale(2.6);
+}
 

@@ -1,5 +1,5 @@
 <md-card class="shadow">
-  <img ng-src="{{room.images[0]}}" ng-href="#/rooms/{{room.id}}" class="md-card-image" alt="Washed Out">
+  <img ng-src="{{room.images[0]}}" ng-href="#/rooms/{{room.id}}" class="md-card-image room-image" alt="Washed Out">
   <md-card-title>
     <md-card-title-text>
       <span class="md-headline column large-12"><a href="#/rooms/{{room.id}}">{{room.name}}</a></span>
@@ -12,7 +12,7 @@
     </p>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end center">
-    <md-button ng-if="!isDisable" class="md-primary" ng-click="directive.openModal(room)">Reserver</md-button>
-    <md-button ng-if="isDisable" class="md-primary" ng-disabled="true">Indisponible sur cette periode</md-button>
+    <md-button ng-if="!isDisable" class="primCol" ng-click="directive.openModal(room)">Reserver</md-button>
+    <md-button ng-if="isDisable" class="md-disabled" ng-disabled="true">Indisponible sur cette periode</md-button>
   </md-card-actions>
 </md-card>

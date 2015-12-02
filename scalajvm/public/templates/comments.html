@@ -1,0 +1,13 @@
+<md-list>
+  <md-list-item class="md-3-line" ng-repeat="comment in comments">
+    <div class="md-list-item-text">
+      <h3>{{comment.title}}</h3>
+      <h4>{{comment.userName}} - {{comment.date | date: "dd-MM-yyyy"}}</h4>
+      <p>{{comment.comment}}</p>
+    </div>
+    <div class="md-secondary">
+      <i data-ng-repeat="star in [1, 2, 3, 4, 5]" class="fa fa-star" ng-class="{'textPrimColor': star <= comment.rate}"></i>
+    </div>
+    <md-divider ng-if="!$last"></md-divider>
+  </md-list-item>
+</md-list>

@@ -19,7 +19,7 @@
 .white {background: #ffffff}
 .button.active{background: $primary-color; color: #ffffff!important;}
 .BlackTrans{background: $blackTransparent}
-.transparent{background: $transparent}
+.transparent{background: $transparent!important;}
 /*z-index*/
 .zIndex1{z-index:1;}
 .zIndex2{z-index:2;}
@@ -36,6 +36,7 @@
 .textLeft{text-align:left!important;}
 .textRight{text-align:right!important;}
 .textColorWhite{color: white}
+.textPrimColor{color: $primary-color}
 
 /*effects*/
 .pointer {cursor:pointer;}

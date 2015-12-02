@@ -23,17 +23,35 @@ class RoomPagesController(scope: RoomScope, timeout: Timeout, service: RoomServi
     case Success(rooms) =>
       scope.$apply {
         scope.rooms = rooms.toJSArray
-        scope.activeRoom = ActiveRoom(name = scope.rooms.head.name, imagePath = scope.rooms.head.images.head)
+        scope.activeRoom = ActiveRoom(step = 0, imagePath = scope.rooms.head.images.head, imagePath1 = scope.rooms.head.images.head)
       }
+      timeout(fn = () => {
+        changeActiveRoom(scope.rooms.tail)
+      },
+        delay = 10000,
+        invokeApply = true
+      )
 
-      changeActiveRoom(scope.rooms)
     case Failure(t) => handleError(t)
   }
 
   def changeActiveImage(images: Seq[String], rooms: Seq[Room]): Any = {
     images.headOption match {
       case Some(image) =>
-        scope.activeRoom = ActiveRoom(name = rooms.head.name, imagePath = image)
+        val step =
+          if (scope.activeRoom.step == 0) 1
+          else 0
+
+        val image0 =
+         if (step == 0) image
+         else scope.activeRoom.imagePath
+
+        val image1 =
+         if (step == 1) image
+         else scope.activeRoom.imagePath1
+
+        scope.activeRoom = ActiveRoom(step = step, imagePath = image0, imagePath1 = image1)
+
         timeout(fn = () => {
           changeActiveImage(images.tail, rooms)
         },

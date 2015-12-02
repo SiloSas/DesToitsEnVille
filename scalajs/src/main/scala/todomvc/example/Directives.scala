@@ -1,9 +1,15 @@
 package todomvc.example
 
+import javafx.scene.input.ScrollEvent
+
 import com.greencatsoft.angularjs._
-import com.greencatsoft.angularjs.core.{RouteParams, Timeout}
+import com.greencatsoft.angularjs.core.{Window, RouteParams, Timeout}
+import com.greencatsoft.angularjs.extensions.material.Sidenav
 import com.greencatsoft.angularjs.extensions.{ModalOptions, ModalService}
 import org.scalajs.dom.Element
+import org.scalajs.dom.document
+import org.scalajs.dom.html.Html
+import org.scalajs.dom.raw.{ClientRect, ClientRectList, UIEvent}
 import prickle.Pickle
 import upickle.default._
 import upickle.json
@@ -76,30 +82,28 @@ class SearchBarDirective extends ElementDirective with TemplatedDirective {
 }
 @JSExport
 @injectable("roomsNav")
-class RoomsNavDirective extends ElementDirective with TemplatedDirective  {
+class RoomsNavDirective(sidenav: Sidenav) extends ElementDirective with TemplatedDirective  {
   override val templateUrl = "assets/templates/roomsNav.html"
+
+  @JSExport
+  def toggleLeft(): Any = {
+    sidenav("left").toggle()
+  }
 }
+
+@JSExport
+@injectable("slideLeft")
+class SlideLeft(sidenav: Sidenav) extends ClassDirective {
+   @JSExport
+  def close(): Any = {
+     sidenav("left").close()
+   }
+}
+
 @JSExport
 @injectable("roomMin")
-class RoomMinDirective(timeout: Timeout, modal: ModalService, routeParams: RouteParams) extends ElementDirective with TemplatedDirective {
+class RoomMinDirective(modal: ModalService) extends ElementDirective with TemplatedDirective {
   override val templateUrl = "assets/templates/roomMin.html"
-
-  override def link(scope: ScopeType, elements: Seq[Element], attrs: Attributes) {
-    elements foreach { element =>
-      def resize(): Any = {
-        val image: Element = element.firstElementChild.firstElementChild
-        val imageWidth = image.clientWidth
-        println(imageWidth)
-        if (imageWidth > 10) {
-          image.setAttribute("style", "height: " + imageWidth * 0.66820276497 + "px")
-          println(image)
-        } else {
-          timeout(() => resize(), 100, false)
-        }
-      }
-      resize()
-    }
-  }
 
   @JSExport
   def openModal(room: Room): Unit = {
@@ -107,13 +111,61 @@ class RoomMinDirective(timeout: Timeout, modal: ModalService, routeParams: Route
     val newModal: ModalOptions = new js.Object().asInstanceOf[ModalOptions]
     newModal.templateUrl = "assets/templates/modal.html"
     newModal.controller = "modalController"
-    /*scope.room = room
-    newModal.scope = scope*/
+    newModal.windowClass = "bookingModal"
+
     newModal.resolve = new js.Object().asInstanceOf[js.Dictionary[js.Any]]
-    val a = write(room2)
     newModal.resolve("room") = write(room2)
-    println(newModal.resolve("room"))
     modal.open(newModal)
   }
+}
 
+@JSExport
+@injectable("roomImage")
+class RoomImage(timeout: Timeout) extends ClassDirective {
+  override def link(scope: ScopeType, elements: Seq[Element], attrs: Attributes) {
+    elements.headOption.map(_.asInstanceOf[Html]) foreach { element =>
+      def resize(): Any = {
+        val imageWidth = element.clientWidth
+        println(imageWidth)
+        if (imageWidth > 10) {
+          element.setAttribute("style", "height: " + imageWidth * 0.66820276497 + "px")
+        } else {
+          timeout(() => resize(), 100, false)
+        }
+      }
+      resize()
+    }
+  }
+}
+
+@JSExport
+@injectable("parallaxBackground")
+class ParallaxBackground(window: Window) extends ClassDirective {
+
+  override def link(scope: ScopeType, elements: Seq[Element], attrs: Attributes): Unit = {
+    val newHeight = window.innerWidth * 0.75369458128
+    elements.headOption.map(_.asInstanceOf[Html]) foreach { element =>
+      if (newHeight < window.innerHeight) element.style.height = newHeight + "px"
+      else element.style.height = window.innerHeight + "px"
+    }
+  }
+}
+
+@JSExport
+@injectable("parallaxContent")
+class ParallaxContent(window: Window) extends ClassDirective {
+
+  override def link(scope: ScopeType, elements: Seq[Element], attrs: Attributes): Unit = {
+    val newHeight = window.innerWidth * 0.75369458128
+    elements.headOption.map(_.asInstanceOf[Html]) foreach { element =>
+      if (newHeight < window.innerHeight) element.style.top = newHeight + "px"
+      else element.style.top = window.innerHeight + "px"
+    }
+  }
+}
+
+@JSExport
+@injectable("comments")
+class CommentsDirective() extends ElementDirective with TemplatedDirective {
+  override val templateUrl ="assets/templates/comments.html"
 }

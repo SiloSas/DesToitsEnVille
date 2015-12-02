@@ -1,0 +1,237 @@
+/* line 1, ../scss/roomMinHome.scss */
+.mainImageMin {
+  filter: grayscale(100%);
+}
+
+/* line 4, ../scss/roomMinHome.scss */
+.roomMinHome {
+  text-align: center;
+}
+
+/* line 7, ../scss/roomMinHome.scss */
+.mainRoomMinText {
+  display: table-cell;
+  vertical-align: middle;
+  position: absolute;
+}
+
+/*
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'feathericons';
+  src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
+  src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+  url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+  url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+  url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+}
+*/
+/* line 26, ../scss/roomMinHome.scss */
+.grid {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+/* Common style */
+/* line 35, ../scss/roomMinHome.scss */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 45, ../scss/roomMinHome.scss */
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+/* line 53, ../scss/roomMinHome.scss */
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 62, ../scss/roomMinHome.scss */
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+/* line 67, ../scss/roomMinHome.scss */
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+/* line 78, ../scss/roomMinHome.scss */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+/* line 86, ../scss/roomMinHome.scss */
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+/* line 91, ../scss/roomMinHome.scss */
+.grid figure h2 span {
+  font-weight: 800;
+}
+
+/* line 95, ../scss/roomMinHome.scss */
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+/* line 100, ../scss/roomMinHome.scss */
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/*---------------*/
+/***** Layla *****/
+/*---------------*/
+/* line 109, ../scss/roomMinHome.scss */
+figure.effect-layla {
+  background: #18a367;
+}
+
+/* line 113, ../scss/roomMinHome.scss */
+figure.effect-layla img {
+  min-height: 110%;
+  min-width: 100%;
+}
+
+/* line 118, ../scss/roomMinHome.scss */
+figure.effect-layla figcaption {
+  padding: 3em;
+}
+
+/* line 122, ../scss/roomMinHome.scss */
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+}
+
+/* line 129, ../scss/roomMinHome.scss */
+figure.effect-layla figcaption::before {
+  top: 50px;
+  right: 30px;
+  bottom: 50px;
+  left: 30px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* line 142, ../scss/roomMinHome.scss */
+figure.effect-layla figcaption::after {
+  top: 30px;
+  right: 50px;
+  bottom: 30px;
+  left: 50px;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+/* line 155, ../scss/roomMinHome.scss */
+figure.effect-layla h2 {
+  padding-top: 26%;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+}
+
+/* line 161, ../scss/roomMinHome.scss */
+figure.effect-layla p {
+  padding: 0.5em 2em;
+  text-transform: none;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+
+/* line 169, ../scss/roomMinHome.scss */
+figure.effect-layla img,
+figure.effect-layla h2 {
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
+}
+
+/* line 175, ../scss/roomMinHome.scss */
+figure.effect-layla img,
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after,
+figure.effect-layla p {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+/* line 183, ../scss/roomMinHome.scss */
+figure.effect-layla:hover img {
+  opacity: 0.7;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 189, ../scss/roomMinHome.scss */
+figure.effect-layla:hover figcaption::before,
+figure.effect-layla:hover figcaption::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 196, ../scss/roomMinHome.scss */
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 203, ../scss/roomMinHome.scss */
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover img {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}

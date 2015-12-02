@@ -44,11 +44,21 @@ object RoomsController extends Controller {
     isAnApartment = true,
     price = 12.5)
 
+  val room4 = new Room(
+    id = "4",
+    name = "Room 4",
+    presentation = "In non ante sed libero venenatis ullamcorper non sed lorem. Suspendisse venenatis massa tellus, " +
+      "id imperdiet orci convallis eu. Quisque at bibendum ante. Curabitur gravida gravida turpis, at dignissim purus " +
+      "commodo quis. .",
+    images = Array(imageBasePath + "blueBed.jpg"),
+    isAnApartment = true,
+    price = 14.5)
+
 //  implicit val placeWrites = Json.writes[Room]
 
 //  implicit val roomPickler: Pickler[Room] = Pickler.materializePickler[Room]
 
-  val rooms = Seq(room1, room2, room3)
+  val rooms = Seq(room1, room2, room3, room4)
   def findAll() = Action {
     Ok(write(rooms))
   }
