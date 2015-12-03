@@ -9,9 +9,6 @@ import scala.scalajs.js.JSConverters.JSRichGenTraversableOnce
 import org.scalajs.dom.console
 import scala.concurrent.ExecutionContext.Implicits.global
 
-/**
- * Created by loann on 11/28/15.
- */
 @JSExport
 @injectable("researchController")
 class ResearchController(scope: RoomScope, timeout: Timeout, service: RoomService, $routeParams: RouteParams)

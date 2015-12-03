@@ -14,14 +14,12 @@ object RoomsController extends Controller {
   val room1 = new Room(
     id = "3",
     name = "Passe Simple",
-    presentation = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet imperdiet augue. " +
-      "Pellentesque luctus enim libero, quis sodales ex congue non. Duis turpis nulla, porta id velit non, " +
-      "feugiat efficitur justo. Ut pellentesque est quis tellus accumsan dapibus. Pellentesque habitant morbi " +
-      "tristique senectus et netus et malesuada fames ac turpis egestas. Duis sit amet ex fermentum, faucibus diam vel, " +
-      "varius urna",
+    presentation = "La chambre, au premier étage de notre maison d’hôtes, calme et spacieuse, bénéficie d’un accès indépendant. " +
+      "Avec lit double en 160 cm, salle de bain avec baignoire et WC privatif indépendant, coin collation, bouilloire et cafetière électrique.",
+    header = "Vous apprécierez les moments de partage autour d’un généreux petit-déjeuner sur la terrasse ou dans notre salle à manger.",
     images = Array(imageBasePath + "passesimple.jpg", imageBasePath + "checkeredDoubleBed.jpg"),
     isAnApartment = false,
-    price = 10.0)
+    price = "65 € / Nuit")
 
   val room2 = new Room(
     id = "2",
@@ -29,9 +27,10 @@ object RoomsController extends Controller {
     presentation = "Maecenas id mattis ipsum. Quisque dictum dolor dolor, a tincidunt nisl tincidunt id. Pellentesque " +
       "vel dolor est. Mauris quis arcu at nibh viverra dignissim in ullamcorper nisl. Curabitur lacinia elementum velit, " +
       "sit amet malesuada nisl volutpat ut. ",
+    header = "Vous apprécierez les moments de partage autour d’un généreux petit-déjeuner sur la terrasse ou dans notre salle à manger.",
     images = Array(imageBasePath + "doubleBed.jpg"),
     isAnApartment = true,
-    price = 15.0)
+    price = "65 € / Nuit")
 
 
   val room3 = new Room(
@@ -40,19 +39,21 @@ object RoomsController extends Controller {
     presentation = "In non ante sed libero venenatis ullamcorper non sed lorem. Suspendisse venenatis massa tellus, " +
       "id imperdiet orci convallis eu. Quisque at bibendum ante. Curabitur gravida gravida turpis, at dignissim purus " +
       "commodo quis. .",
+    header = "Vous apprécierez les moments de partage autour d’un généreux petit-déjeuner sur la terrasse ou dans notre salle à manger.",
     images = Array(imageBasePath + "blueBed2.jpg"),
     isAnApartment = true,
-    price = 12.5)
+    price = "65 € / Nuit")
 
   val room4 = new Room(
     id = "4",
-    name = "Room 4",
-    presentation = "In non ante sed libero venenatis ullamcorper non sed lorem. Suspendisse venenatis massa tellus, " +
-      "id imperdiet orci convallis eu. Quisque at bibendum ante. Curabitur gravida gravida turpis, at dignissim purus " +
-      "commodo quis. .",
+    name = "La terrasse",
+    presentation = "Appartement T1bis au 2ème étage d'une maison d'hôtes comprenant 2 autres appartements et une " +
+      "chambre d'hôtes, avec salon et couchage en 140, petite alcove pour accueillir une 3ème personne ou un enfant. " +
+      "Grande terrasse \"sur le toit\" avec salon de jardin. Cuisine équipée indépendante. Parking en supplément.",
+    header = "Ce lumineux appartement de 35 m² composé d'une chambre spacieuse et confortable vous séduira par sa tranquillité ",
     images = Array(imageBasePath + "blueBed.jpg"),
     isAnApartment = true,
-    price = 14.5)
+    price = "65 € / Nuit - 364 € / Semaine")
 
 //  implicit val placeWrites = Json.writes[Room]
 

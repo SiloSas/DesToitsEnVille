@@ -39,8 +39,6 @@ trait RoomScope extends Scope {
 
   var room: Room = js.native
 
-  var activeImage: String = js.native
-
   var activeRoom: ActiveRoom = js.native
 
   var roomsNavIsOpen: Boolean = js.native
@@ -55,4 +53,23 @@ trait CommentsScope extends Scope {
 
   var comments: js.Array[Comment] = js.native
 
+  var newComment: NewComment = js.native
+
 }
+
+trait NewComment extends Scope {
+  var id: String = js.native
+
+  var title: String = js.native
+
+  var comment: String = js.native
+
+  var userName: String = js.native
+
+  var rate: Int = js.native
+}
+
+trait AgreementsScope extends Scope {
+  var agreements: js.Array[Agreement] = js.native
+}
+

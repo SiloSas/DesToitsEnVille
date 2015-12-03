@@ -6,6 +6,6 @@ import scala.scalajs.js.annotation.JSExportAll
 
 
 @JSExportAll
-case class Room(id: String, name: String, presentation: String, images: js.Array[String], isAnApartment: Boolean, price: Double)
+case class Room(id: String, name: String, presentation: String, header: String, images: js.Array[String], isAnApartment: Boolean, price: String)
 
-case class Room2(id: String, name: String, presentation: String, images: Array[String], isAnApartment: Boolean, price: Double)
+case class Room2(id: String, name: String, presentation: String, header: String, images: Array[String], isAnApartment: Boolean, price: String)

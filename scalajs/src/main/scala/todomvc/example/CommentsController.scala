@@ -1,5 +1,7 @@
 package todomvc.example
 
+import java.util.UUID
+
 import com.greencatsoft.angularjs.core.{RouteParams, Timeout}
 import com.greencatsoft.angularjs.extensions.{ModalService, ModalInstance}
 import com.greencatsoft.angularjs.{AbstractController, injectable}
@@ -13,10 +15,21 @@ import org.scalajs.dom.console
 import scala.scalajs.js.JSConverters.JSRichGenTraversableOnce
 @JSExport
 @injectable("commentsController")
-class CommentsController(scope: CommentsScope)
+class CommentsController(scope: CommentsScope, newComment: NewComment)
   extends AbstractController[CommentsScope](scope) {
 
   scope.comments = js.Array[Comment]()
+
+  cleanNewComment()
+
+  scope.newComment = newComment
+  def cleanNewComment() = {
+    newComment.id = UUID.randomUUID().toString
+    newComment.title = ""
+    newComment.comment = ""
+    newComment.userName = ""
+    newComment.rate = 0
+  }
 
   val comment = Comment(
     id = "1",
@@ -43,6 +56,16 @@ class CommentsController(scope: CommentsScope)
   val comments = Seq(comment, comment1, comment2)
 
   scope.comments = comments.toJSArray
+
+
+  @JSExport
+  def post(): Unit = {
+    val comment = Comment(id = UUID.randomUUID().toString, title = scope.newComment.title, comment = scope.newComment.comment,
+    userName = scope.newComment.userName, rate = scope.newComment.rate, date = new Date())
+
+    scope.comments:+= comment
+    cleanNewComment()
+  }
 
   private def handleError(t: Throwable) {
     console.error(s"An error has occured: $t")

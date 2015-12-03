@@ -180,8 +180,8 @@ module.exports = function (grunt) {
       },
 
       angularMaterial: {
-        src: 'bower_components/angular-material/angular-material.min.js',
-        dest: 'scalajvm/public/plugins/angular-material.min.js'
+        src: 'bower_components/angular-material/angular-material.js',
+        dest: 'scalajvm/public/plugins/angular-material.js'
       },
 
       angularFoundation: {

@@ -14,10 +14,19 @@ import scala.util.{Failure, Success}
 
 @JSExport
 @injectable("roomPagesController")
-class RoomPagesController(scope: RoomScope, timeout: Timeout, service: RoomService) extends AbstractController[RoomScope](scope) {
+class RoomPagesController(scope: RoomScope, timeout: Timeout, service: RoomService, agreementsScope: AgreementsScope,
+                          agreementsService: AgreementService)
+  extends AbstractController[RoomScope](scope) {
 
   scope.rooms = js.Array[Room]()
   scope.roomsNavIsOpen = true
+  agreementsScope.agreements = js.Array[Agreement]()
+
+  agreementsService.findAll() onComplete {
+    case Success(agreements) =>
+      agreementsScope.agreements = agreements.toJSArray
+    case Failure(t) => handleError(t)
+  }
 
   service.findAll() onComplete {
     case Success(rooms) =>

@@ -1,14 +1,50 @@
-<div class="imagesContainer"><div class="imageContainer roomsImagesSlider animated" data-ng-repeat="image in room.images"
-   data-ng-show="image === activeImage">
-  <img ng-src="{{image}}" alt=""
-   class = "width100p "
-
-></div></div>
-<div class="roomDescription absolute column large-8 large-offset-2 BlackTrans rounded shadow text-center textColorWhite"
-     hide-sm>{{room.presentation}}</div>
-<div class="column smallDescription"
-     show-sm hide-gt-md>{{room.presentation}}</div>
-<div class="absolute zIndex1 homeRoomTitle float-left column large-6">
-  <h1 class="float-left marginTop0 column large-12"><a href="#/rooms/{{room.id}}">{{room.name}}</a></h1>
+<div class="width100p float-left parallax-group">
+  <div class="parallax-background width100p float-left ">
+    <div class="absolute parallax__layer--back float-left height100p width100p" style="overflow: hidden">
+      <div class="height100p roomsImagesSlider animated parallax__layer"
+         style="overflow: hidden"
+         ng-show="activeRoom.step == 0"
+      >
+        <img src="{{activeRoom.imagePath}}" class="width100p">
+      </div>
+      <div class="height100p absolute width100p roomsImagesSlider animated"
+          style="overflow: hidden"
+           ng-show="activeRoom.step == 1"
+        >
+        <img src="{{activeRoom.imagePath1}}" class="width100p">
+      </div>
+    </div>
+  </div>
+  <div class="absolute zIndex2 homeRoomTitle float-left" style="top: 30%">
+    <b class="float-left marginTop0 column large-12">{{room.name}}</b>
+    <p>{{room.header}}</p>
+  </div>
+  <div class="parallax-content column large-12 zIndex3 parallax__layer parallax__layer--base">
+    <div class="white width100p float-left text-center">
+      <div class="column large-12 mainText">
+      {{room.presentation}}
+      </div>
+      <div class="column large-12 mainText">
+        <md-button class="md-fab primCol"><i class="fa fa-eur"></i></md-button>
+        <b class="textPrimColor">{{room.price}}</b>
+        <md-button class="md-fab primCol"><i class="fa fa-subway"></i></md-button>
+        <b class="textPrimColor">Cusset (A)</b>
+        <md-button class="md-fab primCol"><i class="fa fa-car"></i></md-button>
+        <b class="textPrimColor">Parking (4€)</b>
+        <md-button class="md-fab primCol"><i class="fa fa-paw"></i></md-button>
+        <b class="textPrimColor">Annimaux acceptés</b>
+      </div>
+    </div>
+    <h1 class="column large-12 text-center margin0 textColorWhite mainTitles">NOS SERVICES</h1>
+    <div class="width100p white float-left grid">
+      <figure class="effect-layla column large-3 medium-6 roomMinHome roomImage padding0 margin0" data-ng-repeat="agreement in agreements">
+        <img class="width100p" src="{{agreement.image}}" alt="{{agreement.name}}"/>
+        <figcaption>
+          <h2><span class="textColorWhite">{{agreement.title}}</span></h2>
+          <p>When Layla appears, she brings an eternal summer along.</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "paddingSearchMin white"></div>
+  </div>
 </div>
-<div class = "paddingSearchMin"></div>

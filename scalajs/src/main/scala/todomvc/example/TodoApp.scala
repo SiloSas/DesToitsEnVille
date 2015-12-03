@@ -18,10 +18,14 @@ object TodoApp extends JSApp {
       .controller[RoomPagesController]
       .controller[RoomController]
       .controller[CommentsController]
+      .controller[ModalController]
       .controller[ResearchController]
+      .controller[ContactController]
       .directive[SearchBarDirective]
       .directive[RoomsNavDirective]
       .directive[RoomMinDirective]
+      .directive[ngContactDirective]
+      .directive[ParallaxGroup]
       .directive[SlideLeft]
       .directive[RoomImage]
       .directive[CommentsDirective]
@@ -29,6 +33,8 @@ object TodoApp extends JSApp {
       .directive[ParallaxContent]
       .factory[TaskServiceFactory]
       .factory[RoomServiceFactory]
+      .factory[AgreementsServiceFactory]
+      .factory[ContactServiceFactory]
       .filter[StatusFilter]
       .config(RoutingConfig)
   }

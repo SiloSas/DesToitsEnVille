@@ -19,7 +19,7 @@
   <script src="@routes.Assets.versioned("plugins/angular.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-animate.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-aria.min.js")"></script>
-  <script src="@routes.Assets.versioned("plugins/angular-material.min.js")"></script>
+  <script src="@routes.Assets.versioned("plugins/angular-material.js")"></script>
   <script src="@routes.Assets.versioned("plugins/mm-foundation.js")"></script>
   <script src="@routes.Assets.versioned("plugins/angular-route.min.js")"></script>
   <script src="@routes.Assets.versioned("plugins/ng-map.min.js")"></script>
@@ -33,8 +33,8 @@
   <md-toolbar class="absolute transparent zIndex4">
     <div>
       <div class = "float-right margin20 paddingRight20" hide-sm>
-        <a href="#/contact" class = "padding10">Contact</a>
-        <a href="/services" class = "padding10">Services</a>
+        <a href="#/" class = "padding10">Accueil</a>
+        <ng-contact class = "padding10 textPrimColor pointer">Contact</ng-contact>
         <a href="/mentionsLegales" class = "padding10">Mentions légales</a>
       </div>
 
@@ -54,8 +54,8 @@
       </md-button>
       <a href="#/rooms/{{room.id}}" class="column primCol md-button float-left small-10"
       ng-click="directive.close()" data-ng-repeat="room in rooms">{{room.name}}</a>
-      <a href="#/contact" class = "column primCol md-button float-left small-10">Contact</a>
-      <a href="/services" class = "column primCol md-button float-left small-10">Services</a>
+      <a href="#/" class = "column primCol md-button float-left small-10">Accueil</a>
+      <ng-contact class = "padding10 textPrimColor pointer">Contact</ng-contact>
       <a href="/mentionsLegales" class = "column primCol md-button float-left small-10">Mentions légales</a>
     </md-content>
   </md-sidenav>

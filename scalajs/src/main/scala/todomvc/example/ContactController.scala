@@ -12,16 +12,19 @@ import scala.util.{Failure, Success}
 import org.scalajs.dom.console
 
 @JSExport
-@injectable("modalController")
-class ModalController(scope: RoomScope, room: String, routeParams: RouteParams)
+@injectable("contactController")
+class ContactController(scope: RoomScope, modalInstance: ModalInstance[Any], contactService: ContactService)
   extends AbstractController[RoomScope](scope) {
 
-  scope.room = read[Room](room)
-  scope.rooms = js.Array[Room]()
-  scope.start = new Date(routeParams.get("start").asInstanceOf[String])
-  println(scope.start)
-  println(routeParams.get("start"))
-  scope.end = new js.Date(routeParams.get("end").asInstanceOf[String])
+  @JSExport
+  def close() = modalInstance.close()
+
+  @JSExport
+  def post(email: String, message: String) = {
+    val newMessage = Message(email = email, message = message)
+    contactService.post(newMessage)
+  }
+
   private def handleError(t: Throwable) {
     console.error(s"An error has occured: $t")
   }
